@@ -1,0 +1,19 @@
+<p></p>
+
+<div class="container text-danger" *ngIf="!comptes">
+  <h3>Vous n'êtes pas autorisé</h3>
+</div>
+
+<table class="container table" *ngIf="comptes">
+  <tr>
+    <th>ID</th> <th>Solde</th> <th>Date Création</th> <th>Type</th> <th>Client</th>
+  </tr>
+  <tr *ngFor="let c of comptes">
+    <td>{{c.id}}</td>
+    <td>{{c.solde}}</td>
+    <td>{{c.dateCreation}}</td>
+    <td>{{c.type}}</td>
+    <td>{{c.client.nom}}</td>
+  </tr>
+
+</table>
